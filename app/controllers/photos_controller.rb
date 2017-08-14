@@ -4,7 +4,6 @@ class PhotosController < ApplicationController
   def favorites
     @photos = current_user.liked_photos
     
-    
     render("photos/favorites.html.erb")
   end
   def index

@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   # does the same as get "/", :controller => "photos", :action => "index"
   # but `root` works better with devise gem (has methods devise needs)
 
-  
   devise_for :users
-  
-  get "/my_likes", :controller => "photos", :action => "favorites"
   
   # Routes for the Comment resource:
   # CREATE
@@ -41,6 +38,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_like/:id", :controller => "likes", :action => "destroy"
+
   #------------------------------
 
   # Routes for the Photo resource:
@@ -58,14 +56,17 @@ Rails.application.routes.draw do
 
   # DELETE
   get "/delete_photo/:id", :controller => "photos", :action => "destroy"
+  
+  # ADDITIONAL
+  get "/my_likes", :controller => "photos", :action => "favorites"  
+  
   #------------------------------
 
   # Routes for the User resource:
   #READ
   get "/users", :controller => "users", :action => "index"
-  post "/users/:id", :controller => "users", :action => "show"
+  get "/users/:id", :controller => "users", :action => "show"
 
-  # devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   mount WebGit::Engine, at: "/rails/git"
 end
