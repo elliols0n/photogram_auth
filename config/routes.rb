@@ -58,7 +58,9 @@ Rails.application.routes.draw do
   get "/delete_photo/:id", :controller => "photos", :action => "destroy"
   
   # ADDITIONAL
-  get "/my_likes", :controller => "photos", :action => "favorites"  
+  get "/my_likes", :controller => "photos", :action => "favorites" 
+  get "/my_wall", :controller => "photos", :action => "wall"
+
   
   #------------------------------
 
