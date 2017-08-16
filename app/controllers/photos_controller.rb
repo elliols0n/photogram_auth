@@ -4,8 +4,6 @@ class PhotosController < ApplicationController
   def wall
     @photos = current_user.photos
     
-    # @user = current_user.id
-    
     render("photos/wall.html.erb")
   end
   
