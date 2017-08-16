@@ -15,6 +15,7 @@ class PhotosController < ApplicationController
   
   def index
     @photos = Photo.all
+    # @from_time = Time.now - Photo.created_at
 
     render("photos/index.html.erb")
   end
