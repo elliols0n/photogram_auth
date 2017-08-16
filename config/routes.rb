@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   # CREATE
   get "/comments/new", :controller => "comments", :action => "new"
   post "/create_comment", :controller => "comments", :action => "create"
-  post "/quick_commnet", :controller => "comments", :action => "quick_create"
+  post "/quick_comment", :controller => "comments", :action => "quick_create"
   
 
   # READ

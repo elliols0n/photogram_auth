@@ -42,10 +42,15 @@ class CommentsController < ApplicationController
     save_status = @comment.save
 
     if save_status == true
-      redirect_to("/photos", :notice => "Like created successfully.")
-    else
-    render("/photos.html.erb")
+      redirect_to("/", :notice => "Like created successfully.")
     end
+    
+    # if URI(request.referer).path == "/comments/#{@comment.id}"
+    #   redirect_to("/", :notice => "Comment deleted.")
+    # else
+    #   redirect_to(:back, :notice => "Comment deleted.")
+    # end
+    
   end  
 
   def edit
